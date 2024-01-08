@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+    <link rel="stylesheet" href="estilos/estilo.css">
+    <script>
+        function actualizarValor(){
+            let cantidad = document.getElementById("cantidad").value;
+            let numCantidad = document.getElementById("numCantidad");
+            numCantidad.textContent = cantidad + "€";
+        }
+
+    </script>
+</head>
+<body>
+    <div class="container">
+        <form class="formulario" action="php/procesa-mensualidad.php" method="post">
+            <h1>CALCULADORA DE PRÉSTAMOS</h1>
+
+            <label>Cántidad Préstamos:</label>
+            <input class="cantidad" type="range" name="cantidad" id="cantidad" min="1000" max="50000" oninput="actualizarValor()"> <span id="numCantidad"></span>
+            
+            <label>Intereses:</label>
+            <p class="interes">10%</p>
+            
+            <label>Cuota de apertura de préstamo:</label>
+            <p class="cuota">2%</p>
+            
+            <label>Menses(Mensualidad): </label>
+            <select name="meses" id="meses" class="meses">
+                <option value="12">12 meses</option>
+                <option value="24">24 meses</option>
+                <option value="36">36 meses</option>
+                <option value="48">48 meses</option>
+            </select>
+            
+            <input type="submit" value="Calcular" class="enviar">
+
+            <img class="imagen" src="imagenes/coche.png" alt="">
+        </form>
+    </div>
+</body>
+</html>
